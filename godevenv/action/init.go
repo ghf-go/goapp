@@ -10,8 +10,10 @@ import (
 func Run() {
 	fmt.Println(runtime.GOOS, runtime.GOARCH, runtime.GOROOT())
 	base.RunAction(0, map[string]base.ActionFunc{
-		"help":   helpAction,
-		"brew":   brewAction,
-		"nodejs": nodeJsAction,
+		"help":    helpAction,
+		"brew":    brewAction,
+		"nodejs":  nodeJsAction,
+		"android": androidAction,
+		"php":     phpAction,
 	})
 }
