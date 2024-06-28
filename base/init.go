@@ -3,6 +3,7 @@ package base
 import (
 	"flag"
 	"fmt"
+	"os/exec"
 )
 
 var args = []string{}
@@ -37,4 +38,10 @@ func RunAction(i int, callMap map[string]ActionFunc) {
 		}
 
 	}
+}
+
+// 运行命令行
+func ShRun(cmd string) {
+	fmt.Sprintln(cmd)
+	exec.Command("bash", "-c", cmd)
 }
