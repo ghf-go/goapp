@@ -7,4 +7,5 @@ module.exports = defineConfig({
   transpileDependencies: true,
   outputDir: "www",
   publicPath: "/",
+  lintOnSave: false,
 });
