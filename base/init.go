@@ -28,6 +28,7 @@ type ActionFunc func()
 // 执行请求
 func RunAction(i int, callMap map[string]ActionFunc) {
 	cmd := GetArg(i)
+	// fmt.Println(cmd, callMap)
 	if call, ok := callMap[cmd]; ok {
 		call()
 	} else {

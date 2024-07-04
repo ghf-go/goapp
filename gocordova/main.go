@@ -23,6 +23,7 @@ func help() {
 	fmt.Println("gocordova 使用帮助\n")
 	fmt.Println("\tcreate name packageName // 创建一个应用 name:应用名称 packageName:包名")
 	fmt.Println("\twxappimg src //src 为图片路径")
+	fmt.Println("\tiosIcon src //src 为图片路径")
 	fmt.Println("")
 }
 
@@ -101,6 +102,7 @@ func main() {
 	base.RunAction(0, map[string]base.ActionFunc{
 		"help":     help,
 		"create":   createApp,
-		"wxappimg": action.WxAppImg,
+		"wxappimg": action.WxAppImgAction,
+		"iosIcon":  action.IosIconAction,
 	})
 }
