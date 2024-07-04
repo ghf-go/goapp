@@ -22,9 +22,26 @@ func getPwd() string {
 func help() {
 	fmt.Println("gocordova 使用帮助\n")
 	fmt.Println("\tcreate name packageName // 创建一个应用 name:应用名称 packageName:包名")
-	fmt.Println("\twxappimg src //src 为图片路径")
-	fmt.Println("\tiosIcon src //src 为图片路径")
+	fmt.Println("\twxappimg src //生成微信app申请应用的小图标 src 为图片路径")
+	fmt.Println("\tiosIcon src //生成IOS的图标 src 为图片路径")
+	fmt.Println("\tcordovaIosIcon src //生产cordova Ios 的图标 src 为图片路径")
+	fmt.Println("\tandroidIcon src //生成Android的图标 src 为图片路径")
+	fmt.Println("\tcordovaAndroidIcon src //生产cordova Android 的图标 src 为图片路径")
+	fmt.Println("\tcordovaAppIcon src //生产cordova Android和Ios 的图标 src 为图片路径")
 	fmt.Println("")
+}
+
+func main() {
+	base.RunAction(0, map[string]base.ActionFunc{
+		"help":               help,
+		"create":             createApp,
+		"wxappimg":           action.WxAppImgAction,
+		"iosIcon":            action.IosIconAction,
+		"cordovaIosIcon":     action.AndroidIconAction,
+		"androidIcon":        action.AndroidIconAction,
+		"cordovaAndroidIcon": action.AndroidCordovaIconAction,
+		"cordovaAppIcon":     action.CordovaAppIconAction,
+	})
 }
 
 // 保存文件
@@ -97,12 +114,4 @@ func createApp() {
 	// }
 
 	saveFiles("template", "", name, pname, appDir)
-}
-func main() {
-	base.RunAction(0, map[string]base.ActionFunc{
-		"help":     help,
-		"create":   createApp,
-		"wxappimg": action.WxAppImgAction,
-		"iosIcon":  action.IosIconAction,
-	})
 }
