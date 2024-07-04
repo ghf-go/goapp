@@ -16,9 +16,9 @@ func AndroidIconAction() {
 func AndroidCordovaIconAction() {
 	src := base.GetArg(1)
 	base.ImgReset(src, "platforms/android/app/src/main/res/mipmap-ldpi/ic_launcher.png", 36)
-	base.ImgReset(src, "platforms/android/app/src/main/res/mipmap-mdpi/ic_launcher.png", 36)
-	base.ImgReset(src, "platforms/android/app/src/main/res/mipmap-hdpi/ic_launcher.png", 48)
-	base.ImgReset(src, "platforms/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png", 72)
-	base.ImgReset(src, "platforms/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png", 96)
-	base.ImgReset(src, "platforms/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png", 144)
+	base.ImgReset(src, "platforms/android/app/src/main/res/mipmap-mdpi/ic_launcher.png", 48)
+	base.ImgReset(src, "platforms/android/app/src/main/res/mipmap-hdpi/ic_launcher.png", 72)
+	base.ImgReset(src, "platforms/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png", 96)
+	base.ImgReset(src, "platforms/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png", 144)
+	base.ImgReset(src, "platforms/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png", 192)
 }
