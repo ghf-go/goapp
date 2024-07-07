@@ -1,26 +1,23 @@
-import { createApp } from "vue";
+import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import vant from "vant";
-import "vant/lib/index.css";
-import Base from "./base";
 
-let app = createApp(App).use(router).use(vant);
-app.mixin({
-  onShow() {
-    console.log("--onShow--");
-  },
-});
-app.use(Base);
+Vue.config.productionTip = false;
 
 if (process.env.NODE_ENV == "production") {
   document.addEventListener(
     "deviceready",
     () => {
-      app.mount("#app");
+      new Vue({
+        router,
+        render: (h) => h(App),
+      }).$mount("#app");
     },
     false
   );
 } else {
-  app.mount("#app");
+  new Vue({
+    router,
+    render: (h) => h(App),
+  }).$mount("#app");
 }

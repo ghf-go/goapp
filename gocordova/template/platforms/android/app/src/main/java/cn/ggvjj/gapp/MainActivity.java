@@ -17,7 +17,7 @@
        under the License.
  */
 
-package org.apache.cordova.myApp;
+package cn.ggvjj.gapp;
 
 import android.os.Bundle;
 

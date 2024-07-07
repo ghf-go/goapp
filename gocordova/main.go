@@ -57,11 +57,11 @@ func saveFiles(pf, p2, appName, appPackage, appDir string) {
 			if e != nil {
 				panic(e.Error())
 			}
-			d1 := strings.ReplaceAll(string(dd), "org.apache.cordova.myApp", appName)
-			d2 := strings.ReplaceAll(d1, "myApp", appPackage)
+			d1 := strings.ReplaceAll(string(dd), "cn.ggvjj.gapp", appPackage)
+			d2 := strings.ReplaceAll(d1, "gappname", appName)
 			dd = []byte(d2)
 			if item.Name() == "MainActivity.java" {
-				oldPath := strings.ReplaceAll("org.apache.cordova.myApp", ".", "/")
+				oldPath := strings.ReplaceAll("cn.ggvjj.gapp", ".", "/")
 				newPath := strings.ReplaceAll(appPackage, ".", "/")
 				p3 := strings.Replace(p2, oldPath, newPath, 1)
 				os.RemoveAll(appDir + strings.Replace(p2, oldPath, "org", 1))

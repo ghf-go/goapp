@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "myApp.app"
-               BlueprintName = "myApp"
-               ReferencedContainer = "container:myApp.xcodeproj">
+               BuildableName = "gappname.app"
+               BlueprintName = "gappname"
+               ReferencedContainer = "container:gappname.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -51,9 +51,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "myApp.app"
-            BlueprintName = "myApp"
-            ReferencedContainer = "container:myApp.xcodeproj">
+            BuildableName = "gappname.app"
+            BlueprintName = "gappname"
+            ReferencedContainer = "container:gappname.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -74,9 +74,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "myApp.app"
-            BlueprintName = "myApp"
-            ReferencedContainer = "container:myApp.xcodeproj">
+            BuildableName = "gappname.app"
+            BlueprintName = "gappname"
+            ReferencedContainer = "container:gappname.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -93,9 +93,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "myApp.app"
-            BlueprintName = "myApp"
-            ReferencedContainer = "container:myApp.xcodeproj">
+            BuildableName = "gappname.app"
+            BlueprintName = "gappname"
+            ReferencedContainer = "container:gappname.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
