@@ -39,7 +39,7 @@
     "eslint-plugin-vue": "^8.0.3",
     "sass-loader": "^14.2.1",
     "vue-template-compiler": "^2.6.14",
-    "cordova-android": "^12.0.1",
+    "cordova-android": "^13.0.0",
     "cordova-ios": "^7.0.1",
     "cordova-plugin-deeplink": "^3.0.2",
     "cordova-support-android-plugin": "~2.0.4"
