@@ -28,6 +28,7 @@ Alias=%s.service`, bname, bname, path, bname)
 	os.WriteFile(fmt.Sprintf("/etc/systemd/system/%s.service", bname), []byte(content), 0777)
 	exec.Command("systemctl", "daemon-reload").Run()
 	exec.Command("systemctl", "enable", "--now", bname).Run()
+	exec.Command("systemctl", "start", bname).Run()
 }
 
 func uninstallSystemd(path string) {

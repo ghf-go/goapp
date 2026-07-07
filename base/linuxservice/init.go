@@ -49,7 +49,7 @@ func getInitSystem() string {
 func InstallService() {
 	switch getInitSystem() {
 	case "systemd":
-		installSystemd(gpath.GetSerlfPath())
+		installSystemd(gpath.GetSelfPath())
 	case "openrc":
 		break
 	}
@@ -59,7 +59,7 @@ func InstallService() {
 func UnInstallService() {
 	switch getInitSystem() {
 	case "systemd":
-		uninstallSystemd(gpath.GetSerlfPath())
+		uninstallSystemd(gpath.GetSelfPath())
 	case "openrc":
 		break
 	}
