@@ -5,6 +5,4 @@ use (
 	./gocordova
 	./godevenv
 	./ipscanclient
-	./lanlinuxserver
-	./lanlinuxclient
 )
