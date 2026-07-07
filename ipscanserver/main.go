@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"log"
 	"net"
+
+	"github.com/ghf-go/goapp/base/linuxservice"
 )
 
 // GOOS=linux GOARCH=arm64 go build -o ipscanserver main.go
@@ -14,6 +16,9 @@ const (
 )
 
 func main() {
+	if linuxservice.Run() {
+		return
+	}
 	// 监听UDP端口
 	conn, err := net.ListenUDP("udp", &net.UDPAddr{Port: 9631})
 	if err != nil {
