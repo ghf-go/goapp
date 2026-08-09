@@ -96,10 +96,13 @@ func (a *aiagentskillruleMdoel) update(dirname string, gname string) error {
 func (a *aiagentskillruleMdoel) saveSkilll(dirname, name, desc, whenToUse, content string) {
 	// kimi-code/skills/
 	utils.SaveFile(dirname+"/.kimi-code/skills/"+name+".md", fmt.Sprintf("---\nname: %s\ndescription: %s\ntype: prompt\nwhenToUse: %s\ndisableModelInvocation: false\n---\n%s", name, desc, whenToUse, content))
+	utils.SaveFile(dirname+"/.trae/skills/"+name+".md", fmt.Sprintf("---\nname: %s\ndescription: %s\ntype: prompt\nwhenToUse: %s\ndisableModelInvocation: false\n---\n%s", name, desc, whenToUse, content))
+
 }
 func (a *aiagentskillruleMdoel) saveAgent(dirname, name, agentdesc, whenToUse, content string) {
 	// kimi-code/agents/
 	utils.SaveFile(dirname+"/.kimi-code/agents/"+name+".md", fmt.Sprintf("---\nname: %s\ndescription: %s\nwhenToUse: %s\noverride: false\nmodel_preference: primary\ntools:\n  - Read\n  - Grep\n  - Glob\n  - mcp__github__*\ndisallowedTools:\n  - Bash\n---\n\n%s", name, agentdesc, whenToUse, content))
+	utils.SaveFile(dirname+"/.trae/agents/"+name+".md", fmt.Sprintf("---\nname: %s\ndescription: %s\nwhenToUse: %s\noverride: false\nmodel_preference: primary\ntools:\n  - Read\n  - Grep\n  - Glob\n  - mcp__github__*\ndisallowedTools:\n  - Bash\n---\n\n%s", name, agentdesc, whenToUse, content))
 
 }
 func (a *aiagentskillruleMdoel) saveRule(dirname, name, desc, whenToUse, content string) {
