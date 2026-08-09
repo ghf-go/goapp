@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/ghf-go/goapp/gtools/app/models"
+	"github.com/ghf-go/goapp/gtools/app/utils"
 )
 
 var (
@@ -38,7 +39,11 @@ func getModelAndRun(name string) {
 		help()
 		os.Exit(0)
 	}
-	m.Run()
+	args := utils.BuildArgs()
+	if e := m.Run(args); e != nil {
+		fmt.Printf("run error: %s\n", e.Error())
+		os.Exit(0)
+	}
 }
 func help() {
 	fmt.Printf("%s command\n\ncommans:\n", os.Args[0])
