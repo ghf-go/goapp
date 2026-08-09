@@ -37,6 +37,19 @@ func GetHomeDir() (string, error) {
 	return u.HomeDir, nil
 }
 
+// 保存文件，如果目录不存在，则创建目录
+func SaveFile(pathName string, data string) error {
+	pdir := filepath.Dir(pathName)
+
+	if !IsExist(pdir) {
+		err := os.MkdirAll(pdir, 0755)
+		if err != nil {
+			return err
+		}
+	}
+	return os.WriteFile(pathName, []byte(data), 0644)
+}
+
 func BuildHomePathAndCreate(pathName string) string {
 	home, err := GetHomeDir()
 	if err != nil {
