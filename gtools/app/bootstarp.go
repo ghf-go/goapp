@@ -2,8 +2,9 @@ package app
 
 import (
 	"fmt"
-	"gtools/app/models"
 	"os"
+
+	"github.com/ghf-go/goapp/gtools/app/models"
 )
 
 var (

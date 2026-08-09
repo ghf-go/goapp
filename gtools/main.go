@@ -1,6 +1,6 @@
 package main
 
-import "gtools/app"
+import "github.com/fei-sh/ghf-go/gtools/app"
 
 func main() {
 	app.Run()
