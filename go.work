@@ -5,4 +5,5 @@ use (
 	./gocordova
 	./godevenv
 	./ipscanclient
+	./gtools
 )
