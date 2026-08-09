@@ -57,19 +57,22 @@ func (a *aiagentskillruleMdoel) update(dirname string, gname string) error {
 			Desc string `json:"description"`
 		} `json:"group"`
 		Agents []struct {
-			Name    string `json:"name"`
-			Desc    string `json:"description"`
-			Content string `json:"content"`
+			Name      string `json:"name"`
+			Desc      string `json:"description"`
+			Content   string `json:"content"`
+			WhenToUse string `json:"whenToUse"`
 		} `json:"agents"`
 		Skills []struct {
-			Name    string `json:"name"`
-			Desc    string `json:"description"`
-			Content string `json:"content"`
+			Name      string `json:"name"`
+			Desc      string `json:"description"`
+			Content   string `json:"content"`
+			WhenToUse string `json:"whenToUse"`
 		} `json:"skills"`
 		Rules []struct {
-			Name    string `json:"name"`
-			Desc    string `json:"description"`
-			Content string `json:"content"`
+			Name      string `json:"name"`
+			Desc      string `json:"description"`
+			Content   string `json:"content"`
+			WhenToUse string `json:"whenToUse"`
 		} `json:"rules"`
 	}
 	ret := &Resp{}
@@ -79,27 +82,27 @@ func (a *aiagentskillruleMdoel) update(dirname string, gname string) error {
 	}
 	// fmt.Printf("ret: %+v\n", ret)
 	for _, v := range ret.Agents {
-		a.saveAgent(dirname, v.Name, v.Desc, v.Content)
+		a.saveAgent(dirname, v.Name, v.Desc, v.WhenToUse, v.Content)
 	}
 	for _, v := range ret.Skills {
-		a.saveSkilll(dirname, v.Name, v.Desc, v.Content)
+		a.saveSkilll(dirname, v.Name, v.Desc, v.WhenToUse, v.Content)
 	}
 	for _, v := range ret.Rules {
-		a.saveRule(dirname, v.Name, v.Desc, v.Content)
+		a.saveRule(dirname, v.Name, v.Desc, v.WhenToUse, v.Content)
 	}
 	fmt.Println(ret.Group.Name)
 	return nil
 }
-func (a *aiagentskillruleMdoel) saveSkilll(dirname, name, desc, content string) {
+func (a *aiagentskillruleMdoel) saveSkilll(dirname, name, desc, whenToUse, content string) {
 	// kimi-code/skills/
-	utils.SaveFile(dirname+"/.kimi-code/skills/"+name+".md", fmt.Sprintf("---\nname: %s\ndescription: %s\ntype: prompt\nwhenToUse: %s\ndisableModelInvocation: false\n---\n%s", name, desc, "", content))
+	utils.SaveFile(dirname+"/.kimi-code/skills/"+name+".md", fmt.Sprintf("---\nname: %s\ndescription: %s\ntype: prompt\nwhenToUse: %s\ndisableModelInvocation: false\n---\n%s", name, desc, whenToUse, content))
 }
-func (a *aiagentskillruleMdoel) saveAgent(dirname, name, agentdesc, content string) {
+func (a *aiagentskillruleMdoel) saveAgent(dirname, name, agentdesc, whenToUse, content string) {
 	// kimi-code/agents/
-	utils.SaveFile(dirname+"/.kimi-code/agents/"+name+".md", fmt.Sprintf("---\nname: %s\ndescription: %s\nwhenToUse: %s\noverride: false\nmodel_preference: primary\ntools:\n  - Read\n  - Grep\n  - Glob\n  - mcp__github__*\ndisallowedTools:\n  - Bash\n---\n\n%s", name, agentdesc, "", content))
+	utils.SaveFile(dirname+"/.kimi-code/agents/"+name+".md", fmt.Sprintf("---\nname: %s\ndescription: %s\nwhenToUse: %s\noverride: false\nmodel_preference: primary\ntools:\n  - Read\n  - Grep\n  - Glob\n  - mcp__github__*\ndisallowedTools:\n  - Bash\n---\n\n%s", name, agentdesc, whenToUse, content))
 
 }
-func (a *aiagentskillruleMdoel) saveRule(dirname, name, desc, content string) {
+func (a *aiagentskillruleMdoel) saveRule(dirname, name, desc, whenToUse, content string) {
 
 }
 func (a *aiagentskillruleMdoel) listGroup() error {
