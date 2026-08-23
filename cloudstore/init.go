@@ -3,7 +3,14 @@ package cloudstore
 import (
 	"mime/multipart"
 
-	"github.com/ghf-go/goapp/cloudstore/conf"
+	"github.com/ghf-go/goapp/cloudstore/base"
+	"github.com/ghf-go/goapp/cloudstore/qiniu"
+)
+
+const (
+	TYPE_ALI     = "ali"
+	TYPE_QINIU   = "qiniu"
+	TYPE_TENCENT = "tencent"
 )
 
 type CloudStore interface {
@@ -30,17 +37,25 @@ type CloudStore interface {
 	UploadFileHeader(f *multipart.FileHeader) (string, error)
 
 	//上传视频文件Token
-	UploadVideoToken(localFilePath string) (*conf.TokenCloudStore, error)
+	UploadVideoToken(localFilePath string) (*base.TokenCloudStore, error)
 	//上传音频文件Token
-	UploadAudioToken(localFilePath string) (*conf.TokenCloudStore, error)
+	UploadAudioToken(localFilePath string) (*base.TokenCloudStore, error)
 	//上传图片文件Token
-	UploadImageToken(localFilePath string) (*conf.TokenCloudStore, error)
+	UploadImageToken(localFilePath string) (*base.TokenCloudStore, error)
 	//上传app文件Token
-	UploadAppToken(localFilePath string) (*conf.TokenCloudStore, error)
+	UploadAppToken(localFilePath string) (*base.TokenCloudStore, error)
 	//上传文件Token
-	UploadToken(localFilePath string) (*conf.TokenCloudStore, error)
+	UploadToken(localFilePath string) (*base.TokenCloudStore, error)
 }
 
-func NewCloudStore(confing *conf.CloudStoreConf) CloudStore {
+func NewCloudStore(confing *base.CloudStoreConf) CloudStore {
+	switch confing.Type {
+	case TYPE_ALI:
+		// return ali.NewQiniuCloudStore(confing)
+	case TYPE_QINIU:
+		return qiniu.NewQiniuCloudStore(confing)
+		// case TYPE_TENCENT:
+		// 	return &tencent.TencentCloudStore{}
+	}
 	return nil
 }

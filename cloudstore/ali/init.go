@@ -3,7 +3,7 @@ package ali
 import (
 	"mime/multipart"
 
-	"github.com/ghf-go/goapp/cloudstore/conf"
+	"github.com/ghf-go/goapp/cloudstore/base"
 )
 
 type AliCloudStore struct {
@@ -39,16 +39,16 @@ func (cs *AliCloudStore) UploadAppFileHeader(f *multipart.FileHeader) (string, e
 func (cs *AliCloudStore) UploadFileHeader(f *multipart.FileHeader) (string, error) {}
 
 // 上传视频文件Token
-func (cs *AliCloudStore) UploadVideoToken(localFilePath string) (*conf.TokenCloudStore, error) {}
+func (cs *AliCloudStore) UploadVideoToken(localFilePath string) (*base.TokenCloudStore, error) {}
 
 // 上传音频文件Token
-func (cs *AliCloudStore) UploadAudioToken(localFilePath string) (*conf.TokenCloudStore, error) {}
+func (cs *AliCloudStore) UploadAudioToken(localFilePath string) (*base.TokenCloudStore, error) {}
 
 // 上传图片文件Token
-func (cs *AliCloudStore) UploadImageToken(localFilePath string) (*conf.TokenCloudStore, error) {}
+func (cs *AliCloudStore) UploadImageToken(localFilePath string) (*base.TokenCloudStore, error) {}
 
 // 上传app文件Token
-func (cs *AliCloudStore) UploadAppToken(localFilePath string) (*conf.TokenCloudStore, error) {}
+func (cs *AliCloudStore) UploadAppToken(localFilePath string) (*base.TokenCloudStore, error) {}
 
 // 上传文件Token
-func (cs *AliCloudStore) UploadToken(localFilePath string) (*conf.TokenCloudStore, error) {}
+func (cs *AliCloudStore) UploadToken(localFilePath string) (*base.TokenCloudStore, error) {}

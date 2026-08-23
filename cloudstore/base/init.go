@@ -1,4 +1,11 @@
-package conf
+package base
+
+import (
+	"fmt"
+	"path"
+	"strings"
+	"time"
+)
 
 type CloudStoreConf struct {
 	Type      string `yaml:"type"`
@@ -7,7 +14,7 @@ type CloudStoreConf struct {
 	AccessKey string `yaml:"access_key"`
 	SecretKey string `yaml:"secret_key"`
 	Endpoint  string `yaml:"endpoint"`
-	Host      string `yaml:"host"`
+	Domain    string `yaml:"domain"`
 }
 
 type TokenCloudStore struct {
@@ -15,4 +22,14 @@ type TokenCloudStore struct {
 	Host   string            `json:"host"`
 	Body   map[string]string `json:"body"`
 	Method string            `json:"method"`
+	Url    string            `json:"url"`
+}
+
+// 生产存储路径
+func BuildPath(descDir, localFilePath string) string {
+	banem := path.Base(localFilePath)
+	ext := path.Ext(banem)
+	bnotExtFile := strings.TrimSuffix(banem, ext)
+	ct := time.Now()
+	return fmt.Sprintf("/%s/%s/%s-%d%s", descDir, ct.Format("2006/01/02"), bnotExtFile, ct.Unix(), ext)
 }
