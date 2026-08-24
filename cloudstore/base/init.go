@@ -33,3 +33,7 @@ func BuildPath(descDir, localFilePath string) string {
 	ct := time.Now()
 	return fmt.Sprintf("/%s/%s/%s-%d%s", descDir, ct.Format("2006/01/02"), bnotExtFile, ct.Unix(), ext)
 }
+
+func (c CloudStoreConf) BuildUrl(filePath string) string {
+	return c.Domain + filePath
+}

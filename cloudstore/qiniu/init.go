@@ -54,7 +54,7 @@ func (cs *QiniuCloudStore) uploadFile(baseDir, localFilePath string) (string, er
 	if err != nil {
 		return "", err
 	}
-	return cs.confing.Domain + "/" + ret.Key, nil
+	return cs.confing.BuildUrl(fk), nil
 }
 func (cs *QiniuCloudStore) UploadVideoFile(localFilePath string) (string, error) {
 	return cs.uploadFile("video", localFilePath)
@@ -96,7 +96,7 @@ func (cs *QiniuCloudStore) uploadVideoFileHeader(baseDir string, f *multipart.Fi
 	if err != nil {
 		return "", err
 	}
-	return cs.confing.Domain + "/" + ret.Key, nil
+	return cs.confing.BuildUrl(fk), nil
 }
 
 // 上传表单视频文件
@@ -139,7 +139,7 @@ func (cs *QiniuCloudStore) uploadToken(baseDir string, localFilePath string) (*b
 			"key":   fk,
 		},
 		Method: "POST",
-		Url:    cs.confing.Domain + fk,
+		Url:    cs.confing.BuildUrl(fk),
 	}, nil
 }
 

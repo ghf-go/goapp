@@ -3,6 +3,7 @@ package cloudstore
 import (
 	"mime/multipart"
 
+	"github.com/ghf-go/goapp/cloudstore/ali"
 	"github.com/ghf-go/goapp/cloudstore/base"
 	"github.com/ghf-go/goapp/cloudstore/qiniu"
 )
@@ -51,7 +52,7 @@ type CloudStore interface {
 func NewCloudStore(confing *base.CloudStoreConf) CloudStore {
 	switch confing.Type {
 	case TYPE_ALI:
-		// return ali.NewQiniuCloudStore(confing)
+		return ali.NewAliCloudStore(confing)
 	case TYPE_QINIU:
 		return qiniu.NewQiniuCloudStore(confing)
 		// case TYPE_TENCENT:
