@@ -1,0 +1,30 @@
+server:
+  port: 8080
+  host: 0.0.0.0
+  debug: true
+db:
+  host: 127.0.0.1
+  port: 3306
+  user: root
+  password: ""
+  database: test
+  charset: utf8mb4
+  parseTime: true
+  loc: Local
+  maxOpenConns: 100
+  maxIdleConns: 10
+  connMaxLifetime: 1h
+  connMaxIdleTime: 1h
+admin:
+  username: admin
+  password: admin123
+  tokenExpireHours: 24
+qiniu:
+  accessKey: ""
+  secretKey: ""
+  bucket: ""
+  domain: ""
+build:
+  workDir: ./builds
+  timeoutMinutes: 30
+k8s: ""
