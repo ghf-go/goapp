@@ -7,4 +7,5 @@ use (
 	./godevenv
 	./gtools
 	./ipscanclient
+	./gconf
 )
