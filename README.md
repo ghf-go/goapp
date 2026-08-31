@@ -3,7 +3,7 @@
 > go 实现的配置文件管理工具
 
 ## 安装
-> go install github.com/ghf-go/goapp/gconf@laster
+> go install github.com/ghf-go/goapp/gconf@latest
 ## 主要功能
 - 生成不同类型的agents.md文档
 

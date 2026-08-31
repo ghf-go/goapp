@@ -174,7 +174,7 @@ project
 - 编写测试用例
 - 编译验证
 - 运行测试用例
-- 修改 /docs/api.swagger 文档，修改 /docs/api.md 文档，修改 docs/design.md 文档,修改 docs/develop.md 文档
+- 修改或者创建 /docs/api.swagger 修改或者创建 /docs/api.md 文档，修改或者创建 docs/design.md 文档,修改或者创建 docs/develop.md 文档
 - 生产代码评审任务
 - 代码评审
 - 合并代码
