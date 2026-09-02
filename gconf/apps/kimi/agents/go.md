@@ -57,73 +57,71 @@ project
 │   ├── api.md # 接口文档
 │   ├── design.md # 设计文档
 │   └── develop.md # 开发文档
-├── mobile # 移动端目录
-└── server # 服务端目录
-│   ├── app # 应用目录
-│   │   ├── actions # 接口目录
-|   │   │   ├── api_mobile # 移动端接口目录
-|   |   │   │   ├── account.go 
-|   |   │   │   └── common.go
-|   │   │   ├── api_admin # 管理端接口目录
-|   |   │   │   ├── account.go
-|   |   │   │   ├── system.go
-|   |   │   │   └── jobs.go
-|   │   │   └── api_web # 网站端接口目录
-|   |   │       └── account.go
-│   │   ├── models # 模型目录
+├── app # 应用目录
+│   ├── actions # 接口目录
+│   │   ├── api_mobile # 移动端接口目录
+|   │   │   ├── account.go 
+|   │   │   └── common.go
+│   │   ├── api_admin # 管理端接口目录
 |   │   │   ├── account.go
-|   |   │   └── system.go
-│   │   ├── logics # 逻辑层目录
-|   │   │   ├── req # 请求层目录
-|   |   │   │   ├── req_mobile # 移动端请求目录
-|   |   │   │   │   ├── account.go
-|   |   │   │   │   └── common.go
-|   |   │   │   ├── req_admin # 管理端请求目录
-|   |   │   │   │   ├── account.go
-|   |   │   │   │   ├── system.go
-|   |   │   │   │   ├── jobs.go
-|   |   │   │   │   └── common.go
-|   |   │   │   └── req_web # 网站端请求目录
-|   |   │   │       ├── account.go
-|   |   │   │       └── common.go
-|   |   │   ├── resp # 响应层目录
-|   |   │   │   ├── resp_mobile # 移动端响应目录
-|   |   │   │   ├── resp_admin # 管理端响应目录
-|   |   │   │   └── resp_web # 网站端响应目录
-|   |   │   ├── services # 服务层目录
-|   |   │   │   ├── svc_account # 账户服务目录
-|   |   │   │   └── svc_system # 系统服务目录
-|   |   │   └── define.go # 全局变量定义
-│   │   ├── middlewares # 中间件目录
-|   │   │   ├── api_middleware.go # 接口中间件
-|   |   │   ├── admin_middleware.go # 管理端中间件
-|   |   │   └── web_middleware.go # 网站端中间件
-|   │   ├── tasks # 任务目录
-|   |   │   ├── job.go # 任务接口
-|   |   │   └── consumer.go # 任务消费者
-|   |   │   ├── jobs # 任务目录
-|   |   │   └── consumers # 消费者目录
-│   │   ├── utils # 工具目录
-|   │   │   ├── common.go # 通用工具
-|   |   │   ├── http.go # http工具
-|   |   │   ├── jwt.go # jwt工具
-|   |   │   ├── log.go # 日志工具
-|   |   │   ├── str.go # 字符串工具
-|   |   │   ├── format.go # 格式化工具
-|   |   │   ├── md5.go # md5工具
-|   |   │   ├── file.go # 文件目录工具
-|   |   │   ├── time.go # 时间工具
-|   |   │   └── validate.go # 验证工具
-│   │   ├── conf # 配置目录
-|   │   │   ├── conf.go # 配置文件,提供获取数据或者redis连接的方法
-|   │   │   ├── test.yaml # 测试环境配置文件
-|   │   │   └── prod.yaml # 生产环境配置文件
-│   │   ├── views # 视图目录
-|   │   │   ├── www # 网站端视图目录
-|   │   │   ├── admin # 管理端视图目录
-|   │   │   └── h5 # 移动端视图目录
-│   │   └── bootstrap.go # 启动文件
-│   └── main.go # 入口文件
+|   │   │   ├── system.go
+|   │   │   └── jobs.go
+│   │   └── api_web # 网站端接口目录
+|   │       └── account.go
+│   ├── models # 模型目录
+│   │   ├── account.go
+|   │   └── system.go
+│   ├── logics # 逻辑层目录
+│   │   ├── req # 请求层目录
+|   │   │   ├── req_mobile # 移动端请求目录
+|   │   │   │   ├── account.go
+|   │   │   │   └── common.go
+|   │   │   ├── req_admin # 管理端请求目录
+|   │   │   │   ├── account.go
+|   │   │   │   ├── system.go
+|   │   │   │   ├── jobs.go
+|   │   │   │   └── common.go
+|   │   │   └── req_web # 网站端请求目录
+|   │   │       ├── account.go
+|   │   │       └── common.go
+|   │   ├── resp # 响应层目录
+|   │   │   ├── resp_mobile # 移动端响应目录
+|   │   │   ├── resp_admin # 管理端响应目录
+|   │   │   └── resp_web # 网站端响应目录
+|   │   ├── services # 服务层目录
+|   │   │   ├── svc_account # 账户服务目录
+|   │   │   └── svc_system # 系统服务目录
+|   │   └── define.go # 全局变量定义
+│   ├── middlewares # 中间件目录
+│   │   ├── api_middleware.go # 接口中间件
+|   │   ├── admin_middleware.go # 管理端中间件
+|   │   └── web_middleware.go # 网站端中间件
+│   ├── tasks # 任务目录
+|   │   ├── job.go # 任务接口
+|   │   └── consumer.go # 任务消费者
+|   │   ├── jobs # 任务目录
+|   │   └── consumers # 消费者目录
+│   ├── utils # 工具目录
+│   │   ├── common.go # 通用工具
+|   │   ├── http.go # http工具
+|   │   ├── jwt.go # jwt工具
+|   │   ├── log.go # 日志工具
+|   │   ├── str.go # 字符串工具
+|   │   ├── format.go # 格式化工具
+|   │   ├── md5.go # md5工具
+|   │   ├── file.go # 文件目录工具
+|   │   ├── time.go # 时间工具
+|   │   └── validate.go # 验证工具
+│   ├── conf # 配置目录
+│   │   ├── conf.go # 配置文件,提供获取数据或者redis连接的方法
+│   │   ├── test.yaml # 测试环境配置文件
+│   │   └── prod.yaml # 生产环境配置文件
+│   ├── views # 视图目录
+│   │   ├── www # 网站端视图目录
+│   │   ├── admin # 管理端视图目录
+│   │   └── h5 # 移动端视图目录
+│   └── bootstrap.go # 启动文件
+└── main.go # 入口文件
 ```
 
 
