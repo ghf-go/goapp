@@ -20,7 +20,7 @@ func main() {
 		return
 	}
 	// 监听UDP端口
-	conn, err := net.ListenUDP("udp", &net.UDPAddr{Port: 9631})
+	conn, err := net.ListenUDP("udp4", &net.UDPAddr{Port: 9631})
 	if err != nil {
 		log.Fatalf("无法监听UDP端口: %v", err)
 	}

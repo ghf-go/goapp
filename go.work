@@ -8,4 +8,5 @@ use (
 	./gtools
 	./ipscanclient
 	./gconf
+	./ipscanserver
 )
