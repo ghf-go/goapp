@@ -7,7 +7,7 @@ import (
 	"github.com/ghf-go/goapp/gconf/help"
 )
 
-//go:embed agents/go.md agents/mobile.md agents/ros2.md agents/wails.md agents/platformio.md agents/base.md
+//go:embed agents/go.md agents/mobile.md agents/ros2.md agents/wails.md agents/rp2040home.md agents/base.md agents/rp2040mac.md
 var goAgentMdFs embed.FS
 
 func Run() {
