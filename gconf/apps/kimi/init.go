@@ -65,7 +65,7 @@ func helpUsage() {
 	help.Print("kimi agents mobile  	#创建移动项目的AGENTS.md", 1)
 	help.Print("kimi agents ros2 	#创建ROS项目的AGENTS.md", 1)
 	help.Print("kimi agents wails 	#创建wails项目的AGENTS.md", 1)
-	help.Print("kimi agents wails 	#创建wails项目的AGENTS.md", 1)
+	help.Print("kimi agents rp2040 	#创建rp2040项目的AGENTS.md", 1)
 	help.Print("kimi agents app_pr 	#生成app产品需求AGENTS.md", 1)
 	help.Print("", 0)
 }
