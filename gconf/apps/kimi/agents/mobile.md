@@ -118,6 +118,10 @@
 - Commit 格式：Conventional Commits（如 feat: 添加登录接口）
 - PR 前必须通过：测试 + lint
 
+# docs/api.swagger 要求
+- 按照前后端接口做一级分组
+- 按照功能模块作为二级分组
+
 # 禁止事项
 - 不提交密钥、密码、token
 - 不提交编译产物、缓存、日志
