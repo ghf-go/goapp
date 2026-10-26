@@ -7,7 +7,7 @@ import (
 	"github.com/ghf-go/goapp/gconf/help"
 )
 
-//go:embed agents/go.md agents/mobile.md agents/ros2.md agents/wails.md agents/rp2040.md agents/base.md agents/apppr.md agents/gomobile.md
+//go:embed agents/gmobile.md agents/go.md agents/mobile.md agents/ros2.md agents/wails.md agents/rp2040.md agents/base.md agents/apppr.md agents/gomobile.md
 var goAgentMdFs embed.FS
 
 func Run() {
@@ -44,6 +44,8 @@ func agents() {
 		agentsRun("apppr")
 	case "gomobile":
 		agentsRun("gomobile")
+	case "gmobile":
+		agentsRun("gmobile")
 	default:
 		helpUsage()
 	}
@@ -70,5 +72,6 @@ func helpUsage() {
 	help.Print("kimi agents rp2040 	#创建rp2040项目的AGENTS.md", 1)
 	help.Print("kimi agents app_pr 	#生成app产品需求AGENTS.md", 1)
 	help.Print("kimi agents gomobile 	#生成app产品需求AGENTS.md", 1)
+	help.Print("kimi agents gmobile 	#生成app产品需求AGENTS.md", 1)
 	help.Print("", 0)
 }
